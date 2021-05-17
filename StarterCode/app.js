@@ -1,9 +1,5 @@
-let id = "";
-let dataset;
-let url = "https://VictorECM/Plotly-homework/samples.json";
-
 function getPlot(id){
-    d3.jason(url).then((data) => {
+    d3.jason("samples.json").then((data) => {
         console.log(data)
         var wfreq = data.metadata.map( d => d.wfreq)
         console.log('Washing Freq: ${wfreq}')
@@ -102,7 +98,7 @@ function getPlot(id){
 
 function getInfo(id) {
     
-    d3.json(url).then((data)=> {
+    d3.json("samples.json").then((data)=> {
         
         
         var metadata = data.metadata;
@@ -137,7 +133,7 @@ function init() {
     var dropdown = d3.select("#selDataset");
 
     
-    d3.json(url).then((data)=> {
+    d3.json("samples.json").then((data)=> {
         console.log(data)
 
         
